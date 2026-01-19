@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
     <title>{{$title}}</title>
     @vite(['resources/js/app.js','resources/css/app.css'])
+    @livewireStyles
 </head>
-<body class="px-4 py-4 h-full font-nunito">
+<body class="px-4 py-4 h-full font-nunito text-deep-purple font-light">
     <div class="flex items-center justify-between border-deep-purple border-b px-2 py-4">
         <div class="flex flex-row items-center space-x-2">
             <img src="https://placehold.co/60" alt="Place Holder" />
@@ -57,5 +58,6 @@
     <div class="flex h-full justify-center">
         {{$slot}}
     </div>
+    @livewireScripts
 </body>
 </html>

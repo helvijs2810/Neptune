@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Course;
 
+
 class CourseController extends Controller
 {
     public function index(){
-        $courses = Course::orderBy('title')->paginate(4);
+        $courses = Course::orderBy('title')->paginate(7);
 
         return view('courses.index', [
             'courses' => $courses
