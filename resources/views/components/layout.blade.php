@@ -55,9 +55,10 @@
             </div>
         </div>
     </div>
-    <div class="flex h-full justify-center">
+    <div class="flex h-full justify-center py-8">
         {{$slot}}
     </div>
+    <x-footer/>
     @livewireScripts
 </body>
 </html>

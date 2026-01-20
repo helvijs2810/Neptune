@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="w-3xl py-3 space-y-3">
+    <div class="w-3xl space-y-3">
         <div>
             <h2 class="font-bold text-4xl pt-2">{{$course->title}}</h2>
         </div>
