@@ -13,3 +13,23 @@
     --font-nunito: 'Nunito', 'sans-serif';
     --color-deep-purple: oklch(0.27 0.1252 298.58);
 }
+
+h1, h2, h3, h4, h5 {
+    font-weight: var(--font-weight-medium);
+}
+
+h4 {
+    font-size: var(--text-lg);
+}
+
+h3 {
+    font-size: var(--text-xl);
+}
+
+h1 {
+    font-size: var(--text-4xl);
+}
+
+h2 {
+    font-size: var(--text-3xl);
+}

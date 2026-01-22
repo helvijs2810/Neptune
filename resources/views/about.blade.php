@@ -1,4 +1,8 @@
 <x-layout>
+    <x-slot:title>
+        About
+    </x-slot:title>
+
     <div class="flex items-center">
         <div class="flex flex-col w-2xl space-y-4">
             <h1 class="font-normal text-6xl">Welcome to the Project Neptune</h1>

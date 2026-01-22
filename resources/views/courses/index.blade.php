@@ -1,4 +1,8 @@
 <x-layout>
+    <x-slot:title>
+        Courses
+    </x-slot:title>
+
     <div class="flex h-[70%]">
     <div class="h-fit flex">
         <div class="space-y-3 w-sm py-3 px-2 h-fit mr-4 z-10 bg-white border-deep-purple border rounded-md">
@@ -7,13 +11,13 @@
             </form>
             <div class="px-2">
                 <from class="grid grid-cols-2 grid-rows-2 *:mb-2 w-fit space-x-5">
-                    <h3 class="font-medium text-lg col-span-2">Study Level</h3>
+                    <h4 class="col-span-2">Study Level</h4>
                     <x-form-radio-check name="study_level">Undergraduate: </x-form-radio-check>
                     <x-form-radio-check name="study_level">Postgraduate: </x-form-radio-check>
                 </from>
             </div>
             <div class="p-2 flex flex-col">
-                <h3 class="font-medium text-lg">Start Date</h3>
+                <h4>Start Date</h4>
                 <div class="grid grid-cols-2 grid-rows-1 *:mb-2 w-fit space-x-5">
                     <x-form-radio-check type="checkbox">September: </x-form-radio-check>
                     <x-form-radio-check type="checkbox">January: </x-form-radio-check>

@@ -1,4 +1,4 @@
-@props(['title' => 'Home'])
+
 
 <!DOCTYPE html>
 <html lang="en" class="h-full">
@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
-    <title>{{$title}}</title>
+    <title>{{$title ?? config('app.name') }}</title>
     @vite(['resources/js/app.js','resources/css/app.css'])
     @livewireStyles
 </head>
-<body class="px-4 py-4 h-full font-nunito text-deep-purple font-light">
+<body class="flex flex-col px-4 py-4 h-full font-nunito text-deep-purple font-light">
     <div class="flex items-center justify-between border-deep-purple border-b px-2 py-4">
         <div class="flex flex-row items-center space-x-2">
             <img src="https://placehold.co/60" alt="Place Holder" />
@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    <div class="flex h-full justify-center py-8">
+    <div class="flex w-full h-full justify-center py-8">
         {{$slot}}
     </div>
     <x-footer/>
