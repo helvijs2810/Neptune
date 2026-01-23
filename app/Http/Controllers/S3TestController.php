@@ -9,7 +9,7 @@ class S3TestController extends Controller
 {
     public function index(){
 
-        $test = Storage::disk('s3')->put('pokemon.txt', 'charizard');
+        $test = Storage::get('test.txt');
 
         dd($test);
     }
