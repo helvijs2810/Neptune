@@ -12,9 +12,13 @@ class DashboardController extends Controller
         $user = $request->user();
 
        // dd($user->profile_picture);
-        $url = Storage::temporaryUrl($user->profile_picture, now()->addMinutes(30));
+       if($user->profile_picture){
+            $url = Storage::temporaryUrl($user->profile_picture, now()->addMinutes(30));
+       } else {
+            $url = 'https://placehold.co/100';
+       }
 
-        return view('user.index', [
+        return view('user.dashboard', [
             'user' => $user,
             'url' => $url
         ]);

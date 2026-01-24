@@ -10,8 +10,8 @@
             <p>This is more of a proof of concept project rather than any serious attempt at making a competitor, more something done just for fun.</p>
             <p>Want to find more about features or just talk? Use links below to navigate to desired section! </p>
             <div class="space-x-5">
-                <a href="/about" class="font-normal text-xl px-2 py-1 border-2 border-deep-purple rounded-xl hover:bg-deep-purple hover:text-white transition-colors duration-300">About</a>
-                <a href="/contact" class="font-normal text-xl px-2 py-1 border-2 border-deep-purple rounded-xl hover:bg-deep-purple hover:text-white transition-colors duration-300">Contact</a>
+                <x-link-button href="/about">About</x-link-button>
+                <x-link-button href="/contact">Contact</x-link-button>
             </div>
         </div>
     </div>

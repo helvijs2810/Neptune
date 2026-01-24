@@ -13,4 +13,8 @@ class Course extends Model
     public function modules(){
         return $this->belongsToMany(Module::class, foreignPivotKey: 'courses_id');
     }
+
+    public function user(){
+        return $this->belongsToMany(User::class, foreignPivotKey: 'users_id');
+    }
 }

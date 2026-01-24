@@ -12,7 +12,7 @@ class UserSettingsController extends Controller
     public function index(){
         $user = Auth::user();
 
-        return view('user.edit', [
+        return view('user.settings', [
             'user' => $user
         ]);
     }
@@ -29,10 +29,11 @@ class UserSettingsController extends Controller
             'profile_picture' => ['nullable']
         ]);
 
-        $user = User::where('id', Auth::user()->id);
+        $user = $request->user();
 
         if(request('profile_picture')){
-            $path = Storage::putFileAs('user_images', $request->file('profile_picture') , 'cool.png');
+            $filename = "user_" . $user->id . "." . $request->file('profile_picture')->extension();
+            $path = Storage::putFileAs('user_images', $request->file('profile_picture') , $filename);
             $user -> update(['profile_picture' => $path]);
         }
 

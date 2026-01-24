@@ -10,6 +10,6 @@ class Module extends Model
     use HasFactory;
     //
     public function courses(){
-        return $this->belongsToMany(Course::class, relatedPivotKey: 'course_id');
+        return $this->belongsToMany(Course::class, relatedPivotKey: 'courses_id');
     }
 }
