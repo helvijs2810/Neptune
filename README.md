@@ -13,6 +13,7 @@ Below is a list of planned features and bonus ones once project gets to producti
 - [x] Basic page layout and some UI (It works)
 - [x] MySQL database running with dummy factory data
 - [x] Some middleware (mainly rendering elements specific to guest user)
+- [x] Close to full working AWS S3 setup for data storage
 
 ### Main features
 - [ ] Mutliple users modes (Guest, Student, Teacher, Admin)
