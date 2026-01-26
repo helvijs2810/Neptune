@@ -1,10 +1,9 @@
 # Neptune
 ## About
 This is work in progress remake of one of my university projects which was making a version of e-learning platform Moodle via PHP.
-Project was started few days ago and aims to expand and remake said project via use of Laravel framework.
 Goal of the project is to make more robust version of university project with things like proper use authorization, better design, etc.
 
-Project will be deployed with Laravel Forge when it is ready to be shown.
+Note: Project is in limbo as I plan to cut down on scope as it feels too big of investment to do solo, especially with feature creep and amount of things to manage.
 
 Below is a list of planned features and bonus ones once project gets to production stage:
 
@@ -21,8 +20,7 @@ Below is a list of planned features and bonus ones once project gets to producti
 - [ ] System where students can apply for said courses
 - [ ] Allow teachers add modules for said course
 - [ ] Add resources and assignments sections for each module
-- [ ] Allow guest to visit website and view courses provided (already in work)
-- [ ] Students choosing and enrolling for classes
+- [x] Allow guest to visit website and view courses provided 
 - [ ] Assessment system to track student course progress
 
 ### Bonuses
