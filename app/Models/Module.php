@@ -12,4 +12,8 @@ class Module extends Model
     public function courses(){
         return $this->belongsToMany(Course::class, relatedPivotKey: 'courses_id');
     }
+
+    public function resources(){
+        return $this->hasMany(Resource::class);
+    }
 }

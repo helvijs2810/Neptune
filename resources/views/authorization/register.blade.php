@@ -3,7 +3,7 @@
         Register
     </x-slot:title>
 
-    <form action="/register" method="POST">
+    <form action="/register" method="POST" autocomplete="off">
         @csrf
         <div class="w-3xl">
             <div class="space-y-3">

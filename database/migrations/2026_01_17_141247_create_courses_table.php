@@ -2,6 +2,7 @@
 
 use App\Models\Course;
 use App\Models\User;
+use App\Models\Module;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,6 +25,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('course_module', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(Course::class, 'courses_id')->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Module::class)->constrained()->cascadeOnDelete();
+            $table->timestamps();
+        });
+
         Schema::create('course_user', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Course::class, 'courses_id')->constrained()->cascadeOnDelete();
@@ -38,5 +46,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('courses');
+        Schema::dropIfExists('course_module');
+        Schema::dropIfExists('course_user');
     }
 };

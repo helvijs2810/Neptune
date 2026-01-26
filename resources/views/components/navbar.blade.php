@@ -12,21 +12,20 @@
             @endguest
             @auth
                 <x-nav-link href='/dashboard'>Dashboard</x-nav-link>
-                <x-nav-link href='/resources'>Resources</x-nav-link>
-                <x-nav-link href='/assignments'>Assignments</x-nav-link>
+                <x-nav-link href='/courses'>My Courses</x-nav-link>
             @endauth
         </div>
-        <div class="inline-flex border-l border-deep-purple p-2">
+        <div class="inline-flex border-l border-r px-4 border-deep-purple p-2">
             <div>
                 @auth
                     @if(Auth::user()->profile_picture)
-                        <img src="{{Storage::temporaryUrl(Auth::user()->profile_picture, now()->addMinutes(30))}}" alt="Place Holder" class="rounded-xl w-16"/>
+                        <img src="{{Storage::temporaryUrl(Auth::user()->profile_picture, now()->addMinutes(30))}}" alt="Place Holder" class="rounded-xl w-16 outline-2 outline-offset-2 outline-deep-purple"/>
                     @else
-                        <img src="https://placehold.co/70" alt="Place Holder" />
+                        <img src="https://placehold.co/70" class="rounded-xl" alt="Place Holder" />
                     @endif
                 @endauth
                 @guest
-                    <img src="https://placehold.co/70" alt="Place Holder" />
+                    <img src="https://placehold.co/70" class="rounded-xl" alt="Place Holder" />
                 @endguest
             </div>
             <div class="flex-column ml-2">
@@ -38,7 +37,7 @@
                     <p class="text-md font-light">Guest</p>
                 @endguest
             </div>
-            <div class="flex flex-col px-5 justify-between">
+            <div class="flex flex-col pl-5 justify-between">
                 @guest
                     <x-nav-link href='/login'>Sign In</x-nav-link>
                     <x-nav-link href='/register'>Register</x-nav-link>

@@ -3,6 +3,19 @@
         {{$course->title}} | Neptune
     </x-slot:title>
 
+    @auth
+    <div class="w-3xl space-y-3">
+        <h1>{{$course->title}}</h1>
+        <h2>Modules: </h2>
+        <div class="flex flex-col space-y-3">
+        @foreach ($course->modules as $module)
+            <a href="/" class="text-deep-purple text-2xl underline hover:decoration-2">{{$module->title}} ({{$module->code}})</a>
+        @endforeach
+        </div>
+    </div>
+    @endauth
+
+    @guest
     <div class="w-3xl space-y-3">
         <div>
             <h1 class="pt-2">{{$course->title}}</h1>
@@ -41,4 +54,5 @@
             @endif
         </div>
     </div>
+    @endguest
 </x-layout>
