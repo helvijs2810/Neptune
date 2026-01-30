@@ -15,9 +15,9 @@ Below is a list of planned features and bonus ones once project gets to producti
 - [x] Close to full working AWS S3 setup for data storage
 
 ### Main features
-- [ ] Mutliple users modes (Guest, Student, Teacher, Admin)
+- [x] Mutliple users modes (Guest, Student, Teacher, Admin)
 - [ ] Functional system for adding courses to platform for teachers
-- [ ] System where students can apply for said courses
+- [x] System where students can apply for said courses
 - [ ] Allow teachers add modules for said course
 - [ ] Add resources and assignments sections for each module
 - [x] Allow guest to visit website and view courses provided 
