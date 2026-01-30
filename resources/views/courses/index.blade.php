@@ -10,14 +10,15 @@
                 <x-form.input class="font-medium text-lg pb-2">Search </x-form.input>
             </form>
             <div class="px-2">
-                <from class="grid grid-cols-2 grid-rows-2 *:mb-2 w-fit space-x-5">
-                    <h4 class="col-span-2">Study Level</h4>
-                    <x-form.radio-check name="study_level">Undergraduate: </x-form.radio-check>
-                    <x-form.radio-check name="study_level">Postgraduate: </x-form.radio-check>
+                <h4 class="col-span-3">Course Length</h4>
+                <from class="flex flex-row space-x-3 py-2 *:w-fit *:mb-2 w-fit" autocomplete="off">
+                    <p>1 Year</p>
+                    <input type="range" list="course_lengths" name="course_length" min='1' max='5' class="accent-deep-purple" />
+                    <p>5 Years</p>
                 </from>
             </div>
             <div class="p-2 flex flex-col">
-                <h4>Start Date</h4>
+                <h4 class="pb-2">Start Date</h4>
                 <div class="grid grid-cols-2 grid-rows-1 *:mb-2 w-fit space-x-5">
                     <x-form.radio-check type="checkbox">September: </x-form.radio-check>
                     <x-form.radio-check type="checkbox">January: </x-form.radio-check>
@@ -25,7 +26,7 @@
             </div>
         </div>
     </div>
-    <div class="w-[384px] h-74 z-0 bg-deep-purple mt-2 ml-2 rounded-md absolute">
+    <div class="w-[384px] h-76 z-0 bg-deep-purple mt-2 ml-2 rounded-md absolute">
         </div>
         <div class="py-3 w-3xl h-fit">
             @foreach ($courses as $course)
@@ -34,11 +35,7 @@
                         <div class="pb-2">
                             <p class="font-bold text-lg">{{$course['title']}}</p>
                         </div>
-                        <div class="flex justify-between pb-2">
-                            <p><strong>Length: </strong> {{$course['length']}} years.</p>
-                            <p><strong>Offer: </strong> {{$course['offer']}}</p>
-                            <p><strong>Start: </strong> {{$course['start']}}</p>
-                        </div>
+                        <x-course-info length="{{$course['length']}}" offer="{{$course['offer']}}" start="{{$course['start']}}" />
                     </a>
                 </div>
             @endforeach

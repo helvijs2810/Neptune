@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('length');
             $table->string('mode');
             $table->string('offer');
-            $table->date('start');
+            $table->string('start');
             $table->text('description');
             $table->timestamps();
         });
@@ -35,7 +35,8 @@ return new class extends Migration
         Schema::create('course_user', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Course::class, 'courses_id')->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(User::class, 'users_id')->constrained()->cascadeOnDelete();
+            $table->boolean('approved')->nullable();
             $table->timestamps();
         });
     }

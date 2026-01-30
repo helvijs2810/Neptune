@@ -12,7 +12,7 @@
             @endguest
             @auth
                 <x-nav-link href='/dashboard'>Dashboard</x-nav-link>
-                <x-nav-link href='/courses'>My Courses</x-nav-link>
+                <x-nav-link href='/enrolled'>My Course</x-nav-link>
             @endauth
         </div>
         <div class="inline-flex border-l border-r px-4 border-deep-purple p-2">

@@ -50,6 +50,6 @@ class User extends Authenticatable
     }
 
     public function courses(){
-        return $this->belongsToMany(Course::class, relatedPivotKey: 'courses_id');
+        return $this->belongsToMany(Course::class, foreignPivotKey: 'users_id' , relatedPivotKey: 'courses_id');
     }
 }

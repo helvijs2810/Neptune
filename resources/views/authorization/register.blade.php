@@ -3,7 +3,7 @@
         Register
     </x-slot:title>
 
-    <form action="/register" method="POST" autocomplete="off">
+    <form action="/register" method="POST">
         @csrf
         <div class="w-3xl">
             <div class="space-y-3">
@@ -20,11 +20,11 @@
                         <x-form.error name="account_type" />
                         <x-form.radio-check name="account_type" value="teacher">Teacher</x-form.radio-check>
                     </div>
-                    <x-form.input type='email' placeholder="name@example.com" name='email' id='email' :value="old('email')" required>Email: </x-form.input>
+                    <x-form.input type='email' placeholder="name@example.com" name='email' id='email' :value="old('email')" autocomplete="new-email" required>Email: </x-form.input>
                     <x-form.error name='email'/>
                     <x-form.input type='email' name='email_confirmation' id='email_confirmation' name='email_confirmation' :value="old('email_confirmation')" required>Confirm Email: </x-form.input>
                     <x-form.error name='email_confirmation'/>
-                    <x-form.input type='password' name='password' id='password' required>Password: </x-form.input>
+                    <x-form.input type='password' name='password' id='password' autocomplete="new-password" required>Password: </x-form.input>
                     <x-form.error name='password'/>
                     <x-form.input type='password' name='password_confirmation' id='password_confirmation' required>Confirm Password: </x-form.input>
                     <x-form.error name='password_confirmation'/>

@@ -3,28 +3,17 @@
         {{$course->title}} | Neptune
     </x-slot:title>
 
-    @auth
     <div class="w-3xl space-y-3">
-        <h1>{{$course->title}}</h1>
-        <h2>Modules: </h2>
-        <div class="flex flex-col space-y-3">
-        @foreach ($course->modules as $module)
-            <a href="/" class="text-deep-purple text-2xl underline hover:decoration-2">{{$module->title}} ({{$module->code}})</a>
-        @endforeach
-        </div>
-    </div>
-    @endauth
-
-    @guest
-    <div class="w-3xl space-y-3">
-        <div>
+        <div class="flex flex-row items-center justify-between">
             <h1 class="pt-2">{{$course->title}}</h1>
+            @if (Auth::user()->courses->isEmpty())
+                <form action="/courses/{{$course->id}}" method="POST">
+                    @csrf
+                    <x-form.button>Apply!</x-form.button>
+                </form>
+            @endif
         </div>
-        <div class="flex justify-between pb-2">
-            <p><strong>Length: </strong> {{$course['length']}} years.</p>
-            <p><strong>Offer: </strong> {{$course['offer']}}</p>
-            <p><strong>Start: </strong> {{$course['start']}}</p>
-        </div>
+        <x-course-info length="{{$course['length']}}" offer="{{$course['offer']}}" start="{{$course['start']}}" />
         <h2>About this course</h2>
         <p>{{$course->description}}</p>
         <h2 class="pt-2">What will you learn</h2>
@@ -54,5 +43,4 @@
             @endif
         </div>
     </div>
-    @endguest
 </x-layout>

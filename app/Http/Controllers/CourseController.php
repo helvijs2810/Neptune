@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -20,8 +21,10 @@ class CourseController extends Controller
         return view('courses.show', ['course' => $course]);
     }
 
-    public function create(){
+    public function create(Course $course){
+        $course->users()->attach(Auth::user()->id, ['approved' => false]);
 
+        return redirect('/dashboard');
     }
 
     public function store(){

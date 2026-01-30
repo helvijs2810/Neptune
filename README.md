@@ -3,7 +3,7 @@
 This is work in progress remake of one of my university projects which was making a version of e-learning platform Moodle via PHP.
 Goal of the project is to make more robust version of university project with things like proper use authorization, better design, etc.
 
-Note: Project is in limbo as I plan to cut down on scope as it feels too big of investment to do solo, especially with feature creep and amount of things to manage.
+Note: Project is being restructured and scaled down due to amount of feature creep encountered.
 
 Below is a list of planned features and bonus ones once project gets to production stage:
 
