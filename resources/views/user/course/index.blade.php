@@ -11,6 +11,7 @@
     @else
         <div class="w-3xl space-y-3">
             @foreach (Auth::user()->courses as $course)
+            @if ($course->pivot->approved === 1)
                 <h1>{{$course->title}}</h1>
                 <h2>Modules: </h2>
                 <div class="flex flex-col space-y-3">
@@ -18,6 +19,10 @@
                         <a href="/" class="text-deep-purple text-2xl underline hover:decoration-2">{{$module->title}} ({{$module->code}})</a>
                     @endforeach
                 </div>
+            @else
+                <h1>Courses to be approved: </h1>
+                <p>{{$course->title}}</p>
+            @endif
             @endforeach
         </div>
     @endif

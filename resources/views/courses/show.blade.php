@@ -6,12 +6,21 @@
     <div class="w-3xl space-y-3">
         <div class="flex flex-row items-center justify-between">
             <h1 class="pt-2">{{$course->title}}</h1>
-            @if (Auth::user()->courses->isEmpty())
-                <form action="/courses/{{$course->id}}" method="POST">
-                    @csrf
-                    <x-form.button>Apply!</x-form.button>
-                </form>
-            @endif
+            @auth
+                @if (Auth::user()->courses->isEmpty())
+                    <form action="/courses/{{$course->id}}" method="POST">
+                        @csrf
+                        <x-form.button>Apply!</x-form.button>
+                    </form>
+                @else
+                    @if (!(Auth::user()->courses->find($course->id)))
+                        <form action="/courses/{{$course->id}}" method="POST">
+                            @csrf
+                            <x-form.button>Apply!</x-form.button>
+                        </form>
+                    @endif
+                @endif
+            @endauth
         </div>
         <x-course-info length="{{$course['length']}}" offer="{{$course['offer']}}" start="{{$course['start']}}" />
         <h2>About this course</h2>
