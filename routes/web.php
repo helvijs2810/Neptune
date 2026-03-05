@@ -19,22 +19,24 @@ use App\Http\Controllers\S3TestController;
 Route::get('/test', [S3TestController::class, 'index']);
 */
 
+/* User */
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-
 Route::get('/settings', [UserSettingsController::class, 'index'])->middleware('auth');
 Route::patch('/settings', [UserSettingsController::class, 'update']);
+Route::get('/user/{user}/courses', [UserController::class, 'index']);
 
-Route::get('/courses', [CourseController::class, 'index']);
-Route::get('/courses/{course}', [CourseController::class, 'show']);
-Route::post('/courses/{course}', [CourseController::class, 'create']);
-
-Route::get('/enrolled', [UserController::class, 'index']);
-
-Route::get('/modules', [ModuleController::class, 'index'])->middleware('auth');
-
-Route::get('/register', [RegisterController::class, 'create']);
-Route::post('/register', [RegisterController::class, 'store']);
-
+/* Auth */
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::get('/logout', [SessionController::class, 'destroy']);
+Route::get('/register', [RegisterController::class, 'create']);
+Route::post('/register', [RegisterController::class, 'store']);
+
+/* Course */
+Route::get('/courses', [CourseController::class, 'index']);
+Route::get('/courses/{course}', [CourseController::class, 'show']);
+Route::post('/courses/{course}', [CourseController::class, 'create']);
+Route::delete('/course/{course}', [CourseController::class, 'delete']);
+
+Route::get('/modules', [ModuleController::class, 'index'])->middleware('auth');
+

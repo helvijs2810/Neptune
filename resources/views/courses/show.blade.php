@@ -7,18 +7,17 @@
         <div class="flex flex-row items-center justify-between">
             <h1 class="pt-2">{{$course->title}}</h1>
             @auth
-                @if (Auth::user()->courses->isEmpty())
+                @if (!(Auth::user()->courses->find($course->id)))
                     <form action="/courses/{{$course->id}}" method="POST">
                         @csrf
-                        <x-form.button>Apply!</x-form.button>
+                        <x-form.button>Apply</x-form.button>
                     </form>
                 @else
-                    @if (!(Auth::user()->courses->find($course->id)))
-                        <form action="/courses/{{$course->id}}" method="POST">
-                            @csrf
-                            <x-form.button>Apply!</x-form.button>
-                        </form>
-                    @endif
+                    <form action="/courses/{{$course->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <x-form.button>Cancel</x-form.button>
+                    </form>
                 @endif
             @endauth
         </div>

@@ -10,20 +10,21 @@
     </div>
     @else
         <div class="w-3xl space-y-3">
+            <h1>Courses to be approved: </h1>
             @foreach (Auth::user()->courses as $course)
-            @if ($course->pivot->approved === 1)
-                <h1>{{$course->title}}</h1>
-                <h2>Modules: </h2>
-                <div class="flex flex-col space-y-3">
-                    @foreach ($course->modules as $module)
-                        <a href="/" class="text-deep-purple text-2xl underline hover:decoration-2">{{$module->title}} ({{$module->code}})</a>
-                    @endforeach
-                </div>
-            @else
-                <h1>Courses to be approved: </h1>
-                <p>{{$course->title}}</p>
-            @endif
+                @if ($course->pivot->approved === 1)
+                    <h1>{{$course->title}}</h1>
+                    <h2>Modules: </h2>
+                    <div class="flex flex-col space-y-3">
+                        @foreach ($course->modules as $module)
+                            <a href="/" class="text-deep-purple text-2xl underline hover:decoration-2">{{$module->title}} ({{$module->code}})</a>
+                        @endforeach
+                    </div>
+                @else
+                    <x-course-card courseid="{{$course->id}}" title="{{$course->title}}" length="{{$course->length}}" offer="{{$course->offer}}" start="{{$course->start}}" />
+                @endif
             @endforeach
+            <x-link-button href="/courses">See All Courses</x-link-button>
         </div>
     @endif
 </x-layout>

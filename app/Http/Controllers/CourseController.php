@@ -39,7 +39,9 @@ class CourseController extends Controller
 
     }
 
-    public function delete(){
+    public function delete(Course $course){
+        $course->users()->detach(Auth::user()->id, ['approved' => false]);
 
+        return redirect('/dashboard');
     }
 }

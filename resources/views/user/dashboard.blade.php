@@ -9,38 +9,17 @@
             </div>
             <h3 class="mt-2">{{$user->first_name ." ". $user->last_name}}</h3>
         </div>
-        <div class="px-4 space-y-6">
-            <div class="flex flex-row space-x-8 h-[30%]">
-                <div class="flex flex-col w-full">
-                    <h2>{{$time}}</h2>
-                    <div class="flex flex-row">
-                        <div class="w-[50%]">
-                            <h4>Recently accessed: </h4>
-                        </div>
-                        <div class="w-[50%]">
-                            <h4>Upcoming Assignments: </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-row">
-                <div class="flex flex-col">
-                    <h2>Progress:</h2>
-                    <div class="flex flex-row space-x-8">
-                        <div>
-                            <h4>Current Degree Results:</h4>
-                            <p>No grade can be currently retrieved :&#40;</p>
-                            <h4>Expected Degree Resuts:</h4>
-                            <p>First Class Honours &#40;1st&#41;</p>
-                        </div>
-                        <div>
-                            <h4>Current Module Progress:</h4>
-                            <p>You have not applied to any courses yet.</p>
-                            <h4>Latest Assessment Results:</h4>
-                            <p>No assessments taken recently.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="p-4">
+            <h2>{{$time}}</h2>
+            <div class="grid grid-cols-2 grid-rows-4 space-x-6 space-y-6">
+                <h4>Recently accessed: </h4>
+                <h4>Upcoming Assignments: </h4>
+                <p>None</p>
+                <p>None</p>
+                <h4>Recent Results:</h4>
+                <h4>Modules Complete:</h4>
+                <p>No assessments currently taken.</p>
+                <p>No modules taken</p>
             </div>
         </div>
     </div>
