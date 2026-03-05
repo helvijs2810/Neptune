@@ -25,10 +25,12 @@ Route::get('/settings', [UserSettingsController::class, 'index'])->middleware('a
 Route::patch('/settings', [UserSettingsController::class, 'update']);
 Route::get('/user/{user}/courses', [UserController::class, 'index']);
 
-/* Auth */
+/* Session */
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::get('/logout', [SessionController::class, 'destroy']);
+
+/* Register */
 Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/register', [RegisterController::class, 'store']);
 

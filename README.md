@@ -3,6 +3,9 @@
 This is work in progress remake of one of my university projects which was making a version of e-learning platform Moodle via PHP.
 Goal of the project is to make more robust version of university project with things like proper use authorization, better design, etc.
 
+### Important Notice:
+Project is currently undergoing major refactoring due to really bad design decisions made very early in development in order to make things work.
+
 Below is a list of planned features and bonus ones once project gets to production stage:
 
 ## Goals
