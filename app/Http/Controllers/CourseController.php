@@ -21,10 +21,8 @@ class CourseController extends Controller
         return view('courses.show', ['course' => $course]);
     }
 
-    public function create(Course $course){
-        $course->users()->attach(Auth::user()->id, ['approved' => false]);
+    public function create(){
 
-        return redirect('/dashboard');
     }
 
     public function store(){
@@ -35,13 +33,17 @@ class CourseController extends Controller
 
     }
 
-    public function update(){
-
+    public function update(Course $course){
+        if(Auth::user()->account_type === 'student'){
+            if($course->users()->find(Auth::user()->id)){
+                $course->users()->detach(Auth::user()->id);
+            } else {
+                $course->users()->attach(Auth::user()->id, ['approved' => false]);
+            }
+            return redirect('/dashboard');
+        }
     }
 
-    public function delete(Course $course){
-        $course->users()->detach(Auth::user()->id, ['approved' => false]);
-
-        return redirect('/dashboard');
+    public function delete(){
     }
 }
